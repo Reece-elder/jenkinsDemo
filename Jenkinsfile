@@ -30,7 +30,7 @@ pipeline {
         stage ('Run Script') {
             steps {
                 sh 'cd scripts'
-                sh 'chmod +x ./testScript.sh'
+                sh 'chmod +x testScript.sh'
                 sh './testScript.sh'
             }
         }

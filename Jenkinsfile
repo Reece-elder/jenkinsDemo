@@ -23,8 +23,21 @@ pipeline {
                 sh 'echo ${string}'
                 sh 'echo ${login}'
                 sh 'echo ${login_USR}'
-                sh 'echo ${login_PWD}'
+                sh 'echo ${login_PSW}'
             }
         } 
+
+        stage ('Run Script') {
+            steps {
+                sh 'cd /scripts'
+                sh 'chmod +x ./testScript.sh'
+                sh './testScript.sh'
+            }
+        }
+
+        // ! RDS Login
+        // ! DockerHub
+        // ! SSH Key
+        // ! GitHub
     }
 }

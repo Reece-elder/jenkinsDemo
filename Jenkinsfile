@@ -5,9 +5,11 @@ pipeline {
 
     stages { // What stages you're wanting jenkins to do
         stage('helloWorld') { // Define a stage of the CI/CD
-            sh 'echo "HelloWorld"'// Step, what you want it to do
-            sh 'pwd' // Lists the path you're on
-            sh 'ls' 
+            steps {
+                sh 'echo "HelloWorld"'// Step, what you want it to do
+                sh 'pwd' // Lists the path you're on
+                sh 'ls' 
+            }
         } 
     }
 }

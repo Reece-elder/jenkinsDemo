@@ -20,7 +20,7 @@ pipeline {
         stage ('Docker Push') {
             steps {
                 sh "echo docker login $dockerAccount"
-                sh "echo $dockerAccount_PWD"
+                sh "echo $dockerAccount_PSW"
                 sh "echo $dockerAccount_USR"
                 sh "echo docker push"
             }

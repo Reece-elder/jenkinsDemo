@@ -3,6 +3,10 @@
 pipeline {
     agent any // What node you're using, just keep as agent any
 
+    environment {
+        dockerAccount = credentials('githubAccount')
+    }
+
     stages {
 
         stage ('helloWorld') {
@@ -10,6 +14,15 @@ pipeline {
                 sh 'echo helloWorld'
                 sh 'pwd'
                 sh 'ls'
+            }
+        }
+
+        stage ('Docker Push') {
+            steps {
+                sh "echo docker login $dockerAccount"
+                sh "echo $dockerAccount_PWD"
+                sh "echo $dockerAccount_USR"
+                sh "echo docker push"
             }
         }
     }
